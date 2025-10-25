@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CapsuleTime</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="firebase.js" defer></script>
+</head>
+<body>
+  <div id="intro">
+    <h1>CAPSULETIME</h1>
+    <h2>Past memories and future moments</h2>
+  </div>
+
+  <button id="memoryButton" style="display:none;">You too have the right to keep a memory</button>
+
+  <form id="capsuleForm" style="display:none;">
+    <input type="text" name="name" placeholder="Your name" required />
+    <select name="category" required>
+      <option value="Base">🟢 Base</option>
+      <option value="Creative">🔵 Creative</option>
+      <option value="Private">🟣 Private</option>
+      <option value="Eternal">🔴 Eternal</option>
+    </select>
+    <input type="datetime-local" name="unlock" required />
+    <input type="text" name="city" placeholder="City" required />
+    <textarea name="message" placeholder="Your memory..." required></textarea>
+    <button type="submit">Send your capsule</button>
+  </form>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById("intro").style.opacity = 0;
+      document.getElementById("memoryButton").style.display = "block";
+    }, 3000);
+
+    document.getElementById("memoryButton").onclick = () => {
+      document.getElementById("memoryButton").style.display = "none";
+      document.getElementById("capsuleForm").style.display = "block";
+    };
+
+    document.getElementById("capsuleForm").onsubmit = function (e) {
+      e.preventDefault();
+      const data = {
+        name: this.name.value,
+        category: this.category.value,
+        unlock: this.unlock.value,
+        city: this.city.value,
+        message: this.message.value
+      };
+      saveCapsule(data);
+      window.location.href = "grazie.html";
+    };
+  </script>
+</body>
+</html>
