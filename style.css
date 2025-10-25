@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: radial-gradient(circle, #0a0a23 0%, #000000 100%);
+  color: #aeefff;
+  text-align: center;
+  overflow: hidden;
+}
+
+#intro {
+  margin-top: 20vh;
+  transition: opacity 2s ease;
+}
+
+h1 {
+  font-size: 3em;
+  text-shadow: 0 0 20px #00f0ff;
+}
+
+h2 {
+  font-size: 1.5em;
+  text-shadow: 0 0 10px #00f0ff;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 1em;
+  background-color: #00f0ff;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 20px #00f0ff;
+}
+
+form {
+  margin-top: 20px;
+}
+
+form input, form textarea, form select {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 80%;
+  border-radius: 5px;
+  border: none;
+}
